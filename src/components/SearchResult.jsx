@@ -27,7 +27,8 @@ const SearchResult = () => {
         fetchDataFromApi(payload).then((res) => {
             console.log(res);
             setResult(res);
-        });
+        })
+        .catch(error=>console.log(error));
     };
 
     if (!result) return;
