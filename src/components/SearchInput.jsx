@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate, useParams } from "react-router-dom";
+import { Context } from "../utils/ContextApi";
 
 import MicIcon from "../assets/mic.svg";
 import ImageIcon from "../assets/image.svg";
 
 const SearchInput = () => {
-    const { query } = useParams();
-    const [searchQuery, setSearchQuery] = useState(query || "");
+    const { setSearchQuery,
+        searchQuery,
+        query}=useContext(Context);
+
+    
     const navigate = useNavigate();
 
     const searchQueryHandler = (event) => {
@@ -24,7 +28,10 @@ const SearchInput = () => {
             <AiOutlineSearch size={30} className=" text-gray-500" />
             <input
                 type="text"
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) =>(setSearchQuery(e.target.value),
+                console.log(searchQuery)
+                )
+                }
                 onKeyUp={searchQueryHandler}
                 value={searchQuery}
                 autoFocus
