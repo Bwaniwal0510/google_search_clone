@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../utils/ContextApi";
 
 import MicIcon from "../assets/mic.svg";
