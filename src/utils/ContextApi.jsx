@@ -11,7 +11,7 @@ export const AppContext = (props) => {
                 imageSearch,
                 setImageSearch,
             }}
-        >
+>
             {props.children}
         </Context.Provider>
     );
